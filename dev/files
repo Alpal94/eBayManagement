@@ -1,0 +1,706 @@
+{
+  "files": [
+    {
+      "date": 1549583554, 
+      "display": "servo-hold.stl", 
+      "hash": "62ed1bd9c30533f9c8cc6685917a62873f224992", 
+      "name": "servo-hold.stl", 
+      "origin": "local", 
+      "path": "servo-hold.stl", 
+      "refs": {
+        "download": "https://octopi.local/downloads/files/local/servo-hold.stl", 
+        "resource": "https://octopi.local/api/files/local/servo-hold.stl"
+      }, 
+      "size": 393684, 
+      "type": "model", 
+      "typePath": [
+        "model", 
+        "stl"
+      ]
+    }, 
+    {
+      "date": 1549583855, 
+      "display": "shoulder-pc1.gcode", 
+      "gcodeAnalysis": {
+        "dimensions": {
+          "depth": 86.875, 
+          "height": 108.21000000000001, 
+          "width": 86.52300000000001
+        }, 
+        "estimatedPrintTime": 20702.012799552984, 
+        "filament": {
+          "tool0": {
+            "length": 28784.678349999922, 
+            "volume": 69.23526512460846
+          }
+        }, 
+        "printingArea": {
+          "maxX": 195.716, 
+          "maxY": 134.415, 
+          "maxZ": 108.51, 
+          "minX": 109.193, 
+          "minY": 47.54, 
+          "minZ": 0.3
+        }
+      }, 
+      "hash": "12b0cc732990b9d851e1774d759527a5078840f6", 
+      "name": "shoulder-pc1.gcode", 
+      "origin": "local", 
+      "path": "shoulder-pc1.gcode", 
+      "prints": {
+        "failure": 2, 
+        "last": {
+          "date": 1549676372.579097, 
+          "success": false
+        }, 
+        "success": 0
+      }, 
+      "refs": {
+        "download": "https://octopi.local/downloads/files/local/shoulder-pc1.gcode", 
+        "resource": "https://octopi.local/api/files/local/shoulder-pc1.gcode"
+      }, 
+      "size": 6056747, 
+      "statistics": {
+        "averagePrintTime": {}, 
+        "lastPrintTime": {}
+      }, 
+      "type": "machinecode", 
+      "typePath": [
+        "machinecode", 
+        "gcode"
+      ]
+    }, 
+    {
+      "display": "oke8f5~1.gco", 
+      "name": "oke8f5~1.gco", 
+      "origin": "sdcard", 
+      "path": "oke8f5~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/oke8f5%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "cylind~1.gco", 
+      "name": "cylind~1.gco", 
+      "origin": "sdcard", 
+      "path": "cylind~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/cylind%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "piston~1.gco", 
+      "name": "piston~1.gco", 
+      "origin": "sdcard", 
+      "path": "piston~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/piston%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "endcap~1.gco", 
+      "name": "endcap~1.gco", 
+      "origin": "sdcard", 
+      "path": "endcap~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/endcap%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "hydrol~1.gco", 
+      "name": "hydrol~1.gco", 
+      "origin": "sdcard", 
+      "path": "hydrol~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/hydrol%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "shaft~1.gco", 
+      "name": "shaft~1.gco", 
+      "origin": "sdcard", 
+      "path": "shaft~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/shaft%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "endcap~2.gco", 
+      "name": "endcap~2.gco", 
+      "origin": "sdcard", 
+      "path": "endcap~2.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/endcap%7E2.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "nub~1.gco", 
+      "name": "nub~1.gco", 
+      "origin": "sdcard", 
+      "path": "nub~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/nub%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "danger~1.gco", 
+      "name": "danger~1.gco", 
+      "origin": "sdcard", 
+      "path": "danger~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/danger%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "the_fi~1.gco", 
+      "name": "the_fi~1.gco", 
+      "origin": "sdcard", 
+      "path": "the_fi~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/the_fi%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "1m1~1.gco", 
+      "name": "1m1~1.gco", 
+      "origin": "sdcard", 
+      "path": "1m1~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/1m1%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "corvet~1.gco", 
+      "name": "corvet~1.gco", 
+      "origin": "sdcard", 
+      "path": "corvet~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/corvet%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "ebamk2~1.gco", 
+      "name": "ebamk2~1.gco", 
+      "origin": "sdcard", 
+      "path": "ebamk2~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/ebamk2%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "ebamk2~3.gco", 
+      "name": "ebamk2~3.gco", 
+      "origin": "sdcard", 
+      "path": "ebamk2~3.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/ebamk2%7E3.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "ebamk2~4.gco", 
+      "name": "ebamk2~4.gco", 
+      "origin": "sdcard", 
+      "path": "ebamk2~4.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/ebamk2%7E4.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "horarm~1.gco", 
+      "name": "horarm~1.gco", 
+      "origin": "sdcard", 
+      "path": "horarm~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/horarm%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "eb4d61~1.gco", 
+      "name": "eb4d61~1.gco", 
+      "origin": "sdcard", 
+      "path": "eb4d61~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/eb4d61%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "eb1a1c~1.gco", 
+      "name": "eb1a1c~1.gco", 
+      "origin": "sdcard", 
+      "path": "eb1a1c~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/eb1a1c%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "eba663~1.gco", 
+      "name": "eba663~1.gco", 
+      "origin": "sdcard", 
+      "path": "eba663~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/eba663%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "ebe94a~1.gco", 
+      "name": "ebe94a~1.gco", 
+      "origin": "sdcard", 
+      "path": "ebe94a~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/ebe94a%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "ebc8d6~1.gco", 
+      "name": "ebc8d6~1.gco", 
+      "origin": "sdcard", 
+      "path": "ebc8d6~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/ebc8d6%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "bolt_2~1.gco", 
+      "name": "bolt_2~1.gco", 
+      "origin": "sdcard", 
+      "path": "bolt_2~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/bolt_2%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "thread~1.gco", 
+      "name": "thread~1.gco", 
+      "origin": "sdcard", 
+      "path": "thread~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/thread%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "bishop~1.gco", 
+      "name": "bishop~1.gco", 
+      "origin": "sdcard", 
+      "path": "bishop~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/bishop%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "mainar~1.gco", 
+      "name": "mainar~1.gco", 
+      "origin": "sdcard", 
+      "path": "mainar~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/mainar%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "wheel~1.gco", 
+      "name": "wheel~1.gco", 
+      "origin": "sdcard", 
+      "path": "wheel~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/wheel%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "chassi~1.gco", 
+      "name": "chassi~1.gco", 
+      "origin": "sdcard", 
+      "path": "chassi~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/chassi%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "protot~1.gco", 
+      "name": "protot~1.gco", 
+      "origin": "sdcard", 
+      "path": "protot~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/protot%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "protot~2.gco", 
+      "name": "protot~2.gco", 
+      "origin": "sdcard", 
+      "path": "protot~2.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/protot%7E2.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "protot~3.gco", 
+      "name": "protot~3.gco", 
+      "origin": "sdcard", 
+      "path": "protot~3.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/protot%7E3.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "ssssss~1.gco", 
+      "name": "ssssss~1.gco", 
+      "origin": "sdcard", 
+      "path": "ssssss~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/ssssss%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "test~1.gco", 
+      "name": "test~1.gco", 
+      "origin": "sdcard", 
+      "path": "test~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/test%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "skel_f~1.gco", 
+      "name": "skel_f~1.gco", 
+      "origin": "sdcard", 
+      "path": "skel_f~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/skel_f%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "protot~4.gco", 
+      "name": "protot~4.gco", 
+      "origin": "sdcard", 
+      "path": "protot~4.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/protot%7E4.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "track_~1.gco", 
+      "name": "track_~1.gco", 
+      "origin": "sdcard", 
+      "path": "track_~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/track_%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "track_~2.gco", 
+      "name": "track_~2.gco", 
+      "origin": "sdcard", 
+      "path": "track_~2.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/track_%7E2.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "finger~1.gco", 
+      "name": "finger~1.gco", 
+      "origin": "sdcard", 
+      "path": "finger~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/finger%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "e5p1~1.gco", 
+      "name": "e5p1~1.gco", 
+      "origin": "sdcard", 
+      "path": "e5p1~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/e5p1%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "forarm~1.gco", 
+      "name": "forarm~1.gco", 
+      "origin": "sdcard", 
+      "path": "forarm~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/forarm%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "servo_~1.gco", 
+      "name": "servo_~1.gco", 
+      "origin": "sdcard", 
+      "path": "servo_~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/servo_%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "ebamk2~2.gco", 
+      "name": "ebamk2~2.gco", 
+      "origin": "sdcard", 
+      "path": "ebamk2~2.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/ebamk2%7E2.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "forarm~2.gco", 
+      "name": "forarm~2.gco", 
+      "origin": "sdcard", 
+      "path": "forarm~2.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/forarm%7E2.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "vex_wh~1.gco", 
+      "name": "vex_wh~1.gco", 
+      "origin": "sdcard", 
+      "path": "vex_wh~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/vex_wh%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "should~2.gco", 
+      "name": "should~2.gco", 
+      "origin": "sdcard", 
+      "path": "should~2.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/should%7E2.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "pullys~1.gco", 
+      "name": "pullys~1.gco", 
+      "origin": "sdcard", 
+      "path": "pullys~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/pullys%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "should~3.gco", 
+      "name": "should~3.gco", 
+      "origin": "sdcard", 
+      "path": "should~3.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/should%7E3.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "sss~1.gco", 
+      "name": "sss~1.gco", 
+      "origin": "sdcard", 
+      "path": "sss~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/sss%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "robot/hand5t~1.gco", 
+      "name": "robot/hand5t~1.gco", 
+      "origin": "sdcard", 
+      "path": "robot/hand5t~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/robot/hand5t%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "should~1.gco", 
+      "name": "should~1.gco", 
+      "origin": "sdcard", 
+      "path": "should~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/should%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "f-shou~1.gco", 
+      "name": "f-shou~1.gco", 
+      "origin": "sdcard", 
+      "path": "f-shou~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/f-shou%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "bicep-~2.gco", 
+      "name": "bicep-~2.gco", 
+      "origin": "sdcard", 
+      "path": "bicep-~2.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/bicep-%7E2.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "ebicep~1.gco", 
+      "name": "ebicep~1.gco", 
+      "origin": "sdcard", 
+      "path": "ebicep~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/ebicep%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "re5p1~1.gco", 
+      "name": "re5p1~1.gco", 
+      "origin": "sdcard", 
+      "path": "re5p1~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/re5p1%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "re5pr2~1.gco", 
+      "name": "re5pr2~1.gco", 
+      "origin": "sdcard", 
+      "path": "re5pr2~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/re5pr2%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "aforea~1.gco", 
+      "name": "aforea~1.gco", 
+      "origin": "sdcard", 
+      "path": "aforea~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/aforea%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "dforar~1.gco", 
+      "name": "dforar~1.gco", 
+      "origin": "sdcard", 
+      "path": "dforar~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/dforar%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "forarm~3.gco", 
+      "name": "forarm~3.gco", 
+      "origin": "sdcard", 
+      "path": "forarm~3.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/forarm%7E3.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "aservo~1.gco", 
+      "name": "aservo~1.gco", 
+      "origin": "sdcard", 
+      "path": "aservo~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/aservo%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "bhand5~1.gco", 
+      "name": "bhand5~1.gco", 
+      "origin": "sdcard", 
+      "path": "bhand5~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/bhand5%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "ok-cop~1.gco", 
+      "name": "ok-cop~1.gco", 
+      "origin": "sdcard", 
+      "path": "ok-cop~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/ok-cop%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "files-~1.gco", 
+      "name": "files-~1.gco", 
+      "origin": "sdcard", 
+      "path": "files-~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/files-%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "lanhan~1.gco", 
+      "name": "lanhan~1.gco", 
+      "origin": "sdcard", 
+      "path": "lanhan~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/lanhan%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }, 
+    {
+      "display": "ft_min~1.gco", 
+      "name": "ft_min~1.gco", 
+      "origin": "sdcard", 
+      "path": "ft_min~1.gco", 
+      "refs": {
+        "resource": "https://octopi.local/api/files/sdcard/ft_min%7E1.gco"
+      }, 
+      "type": "machinecode"
+    }
+  ], 
+  "free": 11775770624, 
+  "total": 15232843776
+}

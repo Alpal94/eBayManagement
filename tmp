@@ -1,0 +1,292 @@
+SimpleXMLElement Object
+(
+    [Timestamp] => 2018-10-30T20:12:03.907Z
+    [Ack] => Success
+    [Version] => 1083
+    [Build] => E1083_CORE_APIXO_18856776_R1
+    [PaginationResult] => SimpleXMLElement Object
+        (
+            [TotalNumberOfPages] => 1
+            [TotalNumberOfEntries] => 2
+        )
+
+    [HasMoreTransactions] => false
+    [TransactionsPerPage] => 100
+    [PageNumber] => 1
+    [ReturnedTransactionCountActual] => 2
+    [Seller] => SimpleXMLElement Object
+        (
+            [AboutMePage] => false
+            [EIASToken] => n==
+            [Email] => magicalbookseller@yahoo.com
+            [FeedbackScore] => 2
+            [PositiveFeedbackPercent] => 75.0
+            [FeedbackPrivate] => false
+            [FeedbackRatingStar] => None
+            [IDVerified] => true
+            [eBayGoodStanding] => true
+            [NewUser] => false
+            [RegistrationDate] => 2004-05-27T00:00:00.000Z
+            [Site] => US
+            [Status] => Confirmed
+            [UserID] => magicalbookseller
+            [UserIDChanged] => false
+            [UserIDLastChanged] => 2007-11-29T18:43:54.000Z
+            [VATStatus] => NoVATTax
+            [SellerInfo] => SimpleXMLElement Object
+                (
+                    [AllowPaymentEdit] => true
+                    [CheckoutEnabled] => true
+                    [CIPBankAccountStored] => false
+                    [GoodStanding] => true
+                    [QualifiesForB2BVAT] => false
+                    [StoreOwner] => true
+                    [StoreURL] => http://www.stores.sandbox.ebay.com/id=132854966
+                    [SafePaymentExempt] => true
+                )
+
+        )
+
+    [TransactionArray] => SimpleXMLElement Object
+        (
+            [Transaction] => Array
+                (
+                    [0] => SimpleXMLElement Object
+                        (
+                            [AmountPaid] => 22.5
+                            [AdjustmentAmount] => 0.0
+                            [ConvertedAdjustmentAmount] => 0.0
+                            [Buyer] => SimpleXMLElement Object
+                                (
+                                    [AboutMePage] => false
+                                    [EIASToken] => nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4CoDZKDpQqdj6x9nY+seQ==
+                                    [Email] => Invalid Request
+                                    [FeedbackScore] => 1
+                                    [PositiveFeedbackPercent] => 100.0
+                                    [FeedbackPrivate] => false
+                                    [FeedbackRatingStar] => None
+                                    [IDVerified] => false
+                                    [eBayGoodStanding] => true
+                                    [NewUser] => false
+                                    [RegistrationDate] => 1995-01-01T00:00:00.000Z
+                                    [Site] => US
+                                    [Status] => Confirmed
+                                    [UserID] => bigbuyer
+                                    [UserIDChanged] => false
+                                    [UserIDLastChanged] => 2009-02-12T05:01:49.000Z
+                                    [VATStatus] => NoVATTax
+                                    [BuyerInfo] => SimpleXMLElement Object
+                                        (
+                                            [ShippingAddress] => SimpleXMLElement Object
+                                                (
+                                                    [Name] => Big Buyer
+                                                    [Street1] => 208 Woods Street
+                                                    [CityName] => Hana
+                                                    [StateOrProvince] => HA
+                                                    [Country] => US
+                                                    [CountryName] => United States
+                                                    [Phone] => (808) 123-2344
+                                                    [PostalCode] => 96713
+                                                    [AddressID] => 4744883
+                                                    [AddressOwner] => eBay
+                                                )
+
+                                        )
+
+                                    [UserAnonymized] => false
+                                )
+
+                            [ShippingDetails] => SimpleXMLElement Object
+                                (
+                                    [ChangePaymentInstructions] => true
+                                    [PaymentEdited] => false
+                                    [SalesTax] => SimpleXMLElement Object
+                                        (
+                                            [SalesTaxPercent] => 8.25
+                                            [SalesTaxState] => CA
+                                            [ShippingIncludedInTax] => true
+                                            [SalesTaxAmount] => 0.0
+                                        )
+
+                                    [ShippingType] => Flat
+                                    [SellingManagerSalesRecordNumber] => 144
+                                    [TaxTable] => SimpleXMLElement Object
+                                        (
+                                            [TaxJurisdiction] => SimpleXMLElement Object
+                                                (
+                                                    [JurisdictionID] => CA
+                                                    [SalesTaxPercent] => 8.25
+                                                    [ShippingIncludedInTax] => true
+                                                )
+
+                                        )
+
+                                )
+
+                            [ConvertedAmountPaid] => 22.5
+                            [ConvertedTransactionPrice] => 20.0
+                            [CreatedDate] => 2018-10-27T19:40:31.000Z
+                            [DepositType] => None
+                            [Item] => SimpleXMLElement Object
+                                (
+                                    [AutoPay] => false
+                                    [Currency] => USD
+                                    [ItemID] => 110043277865
+                                    [ListingType] => Chinese
+                                    [PaymentMethods] => PayPal
+                                    [PrivateListing] => false
+                                    [Quantity] => 1
+                                    [SellingStatus] => SimpleXMLElement Object
+                                        (
+                                            [BidCount] => 1
+                                            [CurrentPrice] => 20.0
+                                            [QuantitySold] => 1
+                                            [ListingStatus] => Completed
+                                        )
+
+                                    [IntegratedMerchantCreditCardEnabled] => false
+                                )
+
+                            [QuantityPurchased] => 1
+                            [Status] => SimpleXMLElement Object
+                                (
+                                    [eBayPaymentStatus] => NoPaymentFailure
+                                    [CheckoutStatus] => SellerResponded
+                                    [LastTimeModified] => 2018-10-27T20:41:59.000Z
+                                    [PaymentMethodUsed] => None
+                                    [CompleteStatus] => Incomplete
+                                    [BuyerSelectedShipping] => false
+                                    [PaymentHoldStatus] => None
+                                    [IntegratedMerchantCreditCardEnabled] => false
+                                )
+
+                            [TransactionID] => 0
+                            [TransactionPrice] => 20.0
+                            [BestOfferSale] => false
+                            [ShippingServiceSelected] => SimpleXMLElement Object
+                                (
+                                    [ShippingService] => USPSMedia
+                                    [ShippingServiceCost] => 2.5
+                                )
+
+                            [TransactionSiteID] => US
+                            [Platform] => eBay
+                            [IntangibleItem] => false
+                        )
+
+                    [1] => SimpleXMLElement Object
+                        (
+                            [AmountPaid] => 3.5
+                            [AdjustmentAmount] => 0.0
+                            [ConvertedAdjustmentAmount] => 0.0
+                            [Buyer] => SimpleXMLElement Object
+                                (
+                                    [AboutMePage] => false
+                                    [EIASToken] => n==
+                                    [Email] => bountifulbuyer@gmail.com
+                                    [FeedbackScore] => 1
+                                    [PositiveFeedbackPercent] => 100.0
+                                    [FeedbackPrivate] => false
+                                    [FeedbackRatingStar] => None
+                                    [IDVerified] => false
+                                    [eBayGoodStanding] => true
+                                    [NewUser] => false
+                                    [RegistrationDate] => 1995-01-01T00:00:00.000Z
+                                    [Site] => US
+                                    [Status] => Confirmed
+                                    [UserID] => bountifulbuyer
+                                    [UserIDChanged] => false
+                                    [UserIDLastChanged] => 2009-02-12T05:01:49.000Z
+                                    [VATStatus] => NoVATTax
+                                    [BuyerInfo] => SimpleXMLElement Object
+                                        (
+                                            [ShippingAddress] => SimpleXMLElement Object
+                                                (
+                                                    [Name] => Bountiful Buyer
+                                                    [Street1] => 123 Gharky Lane
+                                                    [CityName] => Walla Walla
+                                                    [StateOrProvince] => WA
+                                                    [Country] => US
+                                                    [CountryName] => United States
+                                                    [Phone] => (408) 123-2344
+                                                    [PostalCode] => 99362
+                                                    [AddressID] => 5244731
+                                                    [AddressOwner] => eBay
+                                                )
+
+                                        )
+
+                                    [UserAnonymized] => false
+                                )
+
+                            [ShippingDetails] => SimpleXMLElement Object
+                                (
+                                    [ChangePaymentInstructions] => true
+                                    [PaymentEdited] => false
+                                    [SalesTax] => SimpleXMLElement Object
+                                        (
+                                            [SalesTaxPercent] => 0.0
+                                            [ShippingIncludedInTax] => false
+                                            [SalesTaxAmount] => 0.0
+                                        )
+
+                                    [ShippingType] => Flat
+                                    [SellingManagerSalesRecordNumber] => 149
+                                )
+
+                            [ConvertedAmountPaid] => 3.5
+                            [ConvertedTransactionPrice] => 1.0
+                            [CreatedDate] => 2018-10-17T17:32:40.000Z
+                            [Item] => SimpleXMLElement Object
+                                (
+                                    [AutoPay] => false
+                                    [Currency] => USD
+                                    [ItemID] => 110043671232
+                                    [ListingType] => Chinese
+                                    [PaymentMethods] => PayPal
+                                    [PrivateListing] => false
+                                    [Quantity] => 1
+                                    [SellingStatus] => SimpleXMLElement Object
+                                        (
+                                            [BidCount] => 1
+                                            [CurrentPrice] => 1.0
+                                            [QuantitySold] => 1
+                                            [ListingStatus] => Completed
+                                        )
+
+                                    [IntegratedMerchantCreditCardEnabled] => false
+                                )
+
+                            [QuantityPurchased] => 1
+                            [Status] => SimpleXMLElement Object
+                                (
+                                    [eBayPaymentStatus] => NoPaymentFailure
+                                    [CheckoutStatus] => CheckoutComplete
+                                    [LastTimeModified] => 2018-10-17T17:32:40.000Z
+                                    [PaymentMethodUsed] => PayPal
+                                    [CompleteStatus] => Complete
+                                    [BuyerSelectedShipping] => false
+                                    [PaymentHoldStatus] => None
+                                    [IntegratedMerchantCreditCardEnabled] => false
+                                )
+
+                            [TransactionID] => 0
+                            [TransactionPrice] => 1.0
+                            [BestOfferSale] => false
+                            [ShippingServiceSelected] => SimpleXMLElement Object
+                                (
+                                    [ShippingService] => USPSMedia
+                                    [ShippingServiceCost] => 2.5
+                                )
+
+                            [TransactionSiteID] => US
+                            [Platform] => eBay
+                            [IntangibleItem] => false
+                        )
+
+                )
+
+        )
+
+    [PayPalPreferred] => true
+)

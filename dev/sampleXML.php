@@ -67,13 +67,13 @@ $sampleResult = '<GetSellerTransactionsResponse xmlns="urn:ebay:apis:eBLBaseComp
         <BuyerInfo>
           <ShippingAddress>
             <Name>Big Buyer</Name>
-            <Street1>208 Woods Street</Street1>
-            <CityName>Hana</CityName>
-            <StateOrProvince>HA</StateOrProvince>
-            <Country>US</Country>
-            <CountryName>United States</CountryName>
+            <Street1>PO Box 123</Street1>
+            <CityName>Rye</CityName>
+            <StateOrProvince>VIC</StateOrProvince>
+            <Country>AU</Country>
+            <CountryName>Australia</CountryName>
             <Phone>(808) 123-2344</Phone>
-            <PostalCode>96713</PostalCode>
+            <PostalCode>3941</PostalCode>
             <AddressID>4744883</AddressID>
             <AddressOwner>eBay</AddressOwner>
           </ShippingAddress>
@@ -166,13 +166,13 @@ $sampleResult = '<GetSellerTransactionsResponse xmlns="urn:ebay:apis:eBLBaseComp
         <BuyerInfo>
           <ShippingAddress>
             <Name>Bountiful Buyer</Name>
-            <Street1>123 Gharky Lane</Street1>
-            <CityName>Walla Walla</CityName>
-            <StateOrProvince>WA</StateOrProvince>
-            <Country>US</Country>
-            <CountryName>United States</CountryName>
+            <Street1>111 Bourke St</Street1>
+            <CityName>Melbourne</CityName>
+            <StateOrProvince>VIC</StateOrProvince>
+            <Country>AU</Country>
+            <CountryName>Australia</CountryName>
             <Phone>(408) 123-2344</Phone>
-            <PostalCode>99362</PostalCode>
+            <PostalCode>3941</PostalCode>
             <AddressID>5244731</AddressID>
             <AddressOwner>eBay</AddressOwner>
           </ShippingAddress>
@@ -256,13 +256,13 @@ $sampleResult = '<GetSellerTransactionsResponse xmlns="urn:ebay:apis:eBLBaseComp
         <BuyerInfo>
           <ShippingAddress>
             <Name>Bountiful Buyer</Name>
-            <Street1>123 Gharky Lane</Street1>
-            <CityName>Walla Walla</CityName>
-            <StateOrProvince>WA</StateOrProvince>
-            <Country>US</Country>
-            <CountryName>United States</CountryName>
+            <Street1>111 Bourke St</Street1>
+            <CityName>Melbourne</CityName>
+            <StateOrProvince>VIC</StateOrProvince>
+            <Country>AU</Country>
+            <CountryName>Australia</CountryName>
             <Phone>(408) 123-2344</Phone>
-            <PostalCode>99362</PostalCode>
+            <PostalCode>3941</PostalCode>
             <AddressID>5244731</AddressID>
             <AddressOwner>eBay</AddressOwner>
           </ShippingAddress>
@@ -346,13 +346,13 @@ $sampleResult = '<GetSellerTransactionsResponse xmlns="urn:ebay:apis:eBLBaseComp
         <BuyerInfo>
           <ShippingAddress>
             <Name>Bountiful Buyer</Name>
-            <Street1>123 Gharky Lane</Street1>
-            <CityName>Walla Walla</CityName>
-            <StateOrProvince>WA</StateOrProvince>
-            <Country>US</Country>
-            <CountryName>United States</CountryName>
+            <Street1>111 Bourke St</Street1>
+            <CityName>Melbourne</CityName>
+            <StateOrProvince>VIC</StateOrProvince>
+            <Country>AU</Country>
+            <CountryName>Australia</CountryName>
             <Phone>(408) 123-2344</Phone>
-            <PostalCode>99362</PostalCode>
+            <PostalCode>3941</PostalCode>
             <AddressID>5244731</AddressID>
             <AddressOwner>eBay</AddressOwner>
           </ShippingAddress>

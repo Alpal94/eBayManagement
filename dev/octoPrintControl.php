@@ -5,6 +5,7 @@ class OctoPrint {
 	private $octoPiAPIKey;
 	private $telegramAPIKey;
 	private $telegramChannelID;
+	private $piIPAddress;
 
 	public function __construct() {
 		include 'config.php';
@@ -12,6 +13,7 @@ class OctoPrint {
 		$this->octoPiAPIKey = $octoPiAPIKey;
 		$this->telegramAPIKey = $telegramAPIKey;
 		$this->telegramChannelID = $telegramChannelID;
+		$this->piIPAddress = $piIPAddress;
 	}
 
 	function processJobQueue() {
@@ -78,7 +80,7 @@ class OctoPrint {
 	function activateConveyorBelt() {
 		$crl = curl_init();
 		
-		curl_setopt($crl, CURLOPT_URL, "http://10.0.0.37:8001");
+		curl_setopt($crl, CURLOPT_URL, "http://$this->piIPAddress:8001");
 		curl_setopt($crl, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($crl, CURLOPT_SSL_VERIFYHOST, false); 
 
@@ -99,7 +101,7 @@ class OctoPrint {
 			"Host: octopi.local"
 		);
 		
-		curl_setopt($crl, CURLOPT_URL, "https://10.0.0.37/api$get");
+		curl_setopt($crl, CURLOPT_URL, "https://$this->piIPAddress/api$get");
 		curl_setopt($crl, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($crl, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($crl, CURLOPT_SSL_VERIFYHOST, false); 

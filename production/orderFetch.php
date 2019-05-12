@@ -11,16 +11,19 @@ class Management {
 	private $ausPost;
 
 	public function __construct() {
-		include 'sampleXML.php';
 		include 'config.php';
 		$this->db = $db;
-		$this->accessToken = $accessToken;
 		$this->useSample = $useSample;
-		$this->sampleResult = $sampleResult;
+		$this->accessToken = $accessToken;
 		$this->octoPiAPIKey = $octoPiAPIKey;
 		$this->telegramAPIKey = $telegramAPIKey;
 		$this->telegramChannelID = $telegramChannelID;
 		$this->eBayAPIUrl = $eBayAPIUrl;
+
+		if($this->useSample) {
+			include 'sampleXML.php';
+			$this->sampleResult = $sampleResult;
+		}
 	}
 
 	function processOrders() {
@@ -42,7 +45,7 @@ class Management {
 				}
 			}	
 		} else {
-			echo "ERROR: No orders available";
+			echo "ERROR: No orders available\n";
 		}
 	}
 

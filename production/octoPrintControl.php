@@ -5,6 +5,7 @@ class OctoPrint {
 	private $octoPiAPIKey;
 	private $telegramAPIKey;
 	private $telegramChannelID;
+	private $piIPAddress;
 
 	public function __construct() {
 		include 'config.php';
@@ -12,26 +13,37 @@ class OctoPrint {
 		$this->octoPiAPIKey = $octoPiAPIKey;
 		$this->telegramAPIKey = $telegramAPIKey;
 		$this->telegramChannelID = $telegramChannelID;
+		$this->piIPAddress = $piIPAddress;
 	}
 
 	function processJobQueue() {
 		$activeJobs = mysqli_fetch_assoc($this->db->query("SELECT * FROM ActiveOrders WHERE Active=true"));
 		if($activeJobs === null) { 
 			$nextJob = mysqli_fetch_assoc($this->db->query("SELECT * FROM ActiveOrders ORDER BY CreatedAt ASC"));
+			/*
+			 * Error handling priorities: 
+			 * - Must clear print bed first by activateConveyorBelt
+			 * - If successful enter into database
+			 * - On success send print command to printer
+			 */
 			if($nextJob !== null) {
 				$folder = $nextJob["Folder"];
 				$productID = $nextJob["ProductID"];
 				$timestamp = strtotime('now');
 				var_dump($productID);
 
-				$result = $this->db->query("UPDATE ActiveOrders SET StartTime=$timestamp, Active=true WHERE ProductID='$productID'");
-				$this->db->error;
-				if($result) {
-					$printer_result = $this->sendTo3DPrinter($folder);
-					$this->telegramMessage("Activated new print job: $printer_result");
+				if ($this->activateConveyorBelt()) {
+					$result = $this->db->query("UPDATE ActiveOrders SET StartTime=$timestamp, Active=true WHERE ProductID='$productID'");
+					$this->db->error;
+					if($result) {
+						$printer_result = $this->sendTo3DPrinter($folder);
+						$this->telegramMessage("Activated new print job: $printer_result");
+					} else {
+						$error = $this->db->error;
+						$this->telegramMessage("Database insertion error for $productID while activating print job: $error");
+					}
 				} else {
-					$error = $this->db->error;
-					$this->telegramMessage("Database insertion error for $productID while activating print job: $error");
+					echo "ERROR ACTIVATING PRINT JOB\n";  
 				}
 			} else {
 				echo "Nothing to do ... \n";
@@ -65,6 +77,21 @@ class OctoPrint {
 		return $this->curl($get, false);
 	}
 
+	function activateConveyorBelt() {
+		$crl = curl_init();
+		
+		curl_setopt($crl, CURLOPT_URL, "http://$this->piIPAddress:8001");
+		curl_setopt($crl, CURLOPT_SSL_VERIFYPEER, false);
+		curl_setopt($crl, CURLOPT_SSL_VERIFYHOST, false); 
+
+		curl_setopt($crl, CURLOPT_RETURNTRANSFER, 1);
+		$result = curl_exec($crl);
+		if(!$result) $result = curl_error($crl);
+		curl_close($crl);
+
+		return $result == "Activated belt" ? true : false;
+	}
+
 	function curl($get, $post) {
 		$crl = curl_init();
 
@@ -74,7 +101,7 @@ class OctoPrint {
 			"Host: octopi.local"
 		);
 		
-		curl_setopt($crl, CURLOPT_URL, "https://10.0.0.37/api$get");
+		curl_setopt($crl, CURLOPT_URL, "https://$this->piIPAddress/api$get");
 		curl_setopt($crl, CURLOPT_HTTPHEADER, $headers);
 		curl_setopt($crl, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($crl, CURLOPT_SSL_VERIFYHOST, false); 

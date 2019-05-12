@@ -45,7 +45,6 @@ class OctoPrint {
 					$this->telegramMessage("Error activating conveyor belt for $productID");
 				}
 			} else {
-				echo "Nothing to do ... \n";
 			}
 		} else {
 			$timeleft = $activeJobs["PrintDuration"] - (strtotime('now') - $activeJobs["StartTime"]) / 60;

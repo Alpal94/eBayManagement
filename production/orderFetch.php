@@ -41,11 +41,9 @@ class Management {
 					$this->pushPrintJobToQueue($orders);
 					$this->printShippingLabel($orders, $transactionID);
 				} else {
-					echo "Item exists in database and is in line for processing\n";
 				}
 			}	
 		} else {
-			echo "No orders available\n";
 		}
 	}
 

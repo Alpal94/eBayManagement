@@ -45,7 +45,7 @@ class Management {
 				}
 			}	
 		} else {
-			echo "ERROR: No orders available\n";
+			echo "No orders available\n";
 		}
 	}
 
@@ -158,6 +158,7 @@ class Management {
 	}
 
 	function telegramMessage($message) {
+		echo "$message\n";
 		file_get_contents("https://api.telegram.org/bot$this->telegramAPIKey/sendMessage?chat_id=$this->telegramChannelID&text=$message");
 	}
 }

@@ -142,7 +142,6 @@ class AusPost {
 		$labelRequestID = $result["labels"][0]["request_id"];
 		$labelGenerated = json_decode($this->curl("/shipping/v1/labels/$labelRequestID", false), true);
 		while($labelGenerated["labels"][0]["status"] == "PENDING") {
-			echo "PENDING\n";
 			$labelGenerated = json_decode($this->curl("/shipping/v1/labels/$labelRequestID", false), true);
 			sleep(1);
 		}

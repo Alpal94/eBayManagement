@@ -30,7 +30,6 @@ class OctoPrint {
 				$folder = $nextJob["Folder"];
 				$productID = $nextJob["ProductID"];
 				$timestamp = strtotime('now');
-				var_dump($productID);
 
 				if ($this->activateConveyorBelt()) {
 					$result = $this->db->query("UPDATE ActiveOrders SET StartTime=$timestamp, Active=true WHERE ProductID='$productID'");
@@ -43,10 +42,9 @@ class OctoPrint {
 						$this->telegramMessage("Database insertion error for $productID while activating print job: $error");
 					}
 				} else {
-					echo "ERROR ACTIVATING PRINT JOB\n";  
+					$this->telegramMessage("Error activating conveyor belt for $productID");
 				}
 			} else {
-				echo "Nothing to do ... \n";
 			}
 		} else {
 			$timeleft = $activeJobs["PrintDuration"] - (strtotime('now') - $activeJobs["StartTime"]) / 60;
@@ -118,12 +116,12 @@ class OctoPrint {
 	}
 
 	function telegramMessage($message) {
+		echo "$message\n";
 		file_get_contents("https://api.telegram.org/bot$this->telegramAPIKey/sendMessage?chat_id=$this->telegramChannelID&text=$message");
 	}
 }
 
 $OctoPrint = new OctoPrint();
 $OctoPrint->processJobQueue();
-//echo $OctoPrint->sendTo3DPrinter("shoulder-pc1.gcode");
 
 ?>

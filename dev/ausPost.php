@@ -44,12 +44,27 @@ class AusPost {
 		$this->piIPAddress = $piIPAddress;
 	}
 
+	function stateFormater($state) {
+		switch(strtolower($state)) {
+			case "western australia": return "WA";
+			case "victoria": return "VIC";
+			case "new south wales": return "NSW";
+			case "queensland": return "QLD";
+			case "tasmania": return "TAS";
+			case "south australia": return "SA";
+			case "australian capital territory": return "ACT";
+			case "northern territory": return "NT";
+			default: return $state;
+		}
+		return $state;
+	}
+
 	function createShipment($orderID, $name, $street, $suburb, $state, $postcode, $phone, $email, $delivery_instructions) {
 		$length = "5";
 		$height = "5";
 		$width = "5";
 		$weight = "0.1";
-
+		var_dump($this->stateFormater($state));
 		$coName = "Alasdair Penman";
 		$coStreet = "22 Winifred Street";
 		$coSuburb = "Mosman Park";
@@ -79,7 +94,7 @@ class AusPost {
 				"'.$street.'"
 			    ],
 			    "suburb":"'.$suburb.'",
-			    "state":"'.$state.'",
+			    "state":"'.$this->stateFormater($state).'",
 			    "postcode":"'.$postcode.'",
 			    "phone":"'.$phone.'",
 			    "email":"'.$email.'",

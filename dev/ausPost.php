@@ -101,7 +101,9 @@ class AusPost {
 		    ]
 		}';
 
-		$result = json_decode($this->curl("/shipping/v1/shipments", $body), true);
+		$result = $this->curl("/shipping/v1/shipments", $body);
+		$this->telegramMessage($result);
+		$result = json_decode($result, true);
 		return new Shipment(
 			$result["shipments"][0]["shipment_id"],
 			$result["shipments"][0]["items"][0]["item_id"],
@@ -182,7 +184,10 @@ class AusPost {
 		}
 		curl_setopt($crl, CURLOPT_RETURNTRANSFER, 1);
 		$result = curl_exec($crl);
-		if(!$result) $result = curl_error($crl);
+		if(!$result) {
+			$result = curl_error($crl);
+			$this->telegramMessage($result);
+		}
 		curl_close($crl);
 		return $result;
 

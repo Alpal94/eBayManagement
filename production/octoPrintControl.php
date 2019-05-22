@@ -6,6 +6,7 @@ class OctoPrint {
 	private $telegramAPIKey;
 	private $telegramChannelID;
 	private $piIPAddress;
+	private $production;
 
 	public function __construct() {
 		include 'config.php';
@@ -14,6 +15,7 @@ class OctoPrint {
 		$this->telegramAPIKey = $telegramAPIKey;
 		$this->telegramChannelID = $telegramChannelID;
 		$this->piIPAddress = $piIPAddress;
+		$this->production = $production;
 	}
 
 	function processJobQueue() {
@@ -66,8 +68,8 @@ class OctoPrint {
 	function sendTo3DPrinter($file) {
 		$get = "/files/local/$file";
 		$post = '{"command": "select", "print": true}';
-
-		return $this->curl($get, $post);
+		if($this->production) return $this->curl($get, $post);
+		else return "TESTING COMPLETE";
 	}
 
 	function getFiles() {

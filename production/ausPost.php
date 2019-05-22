@@ -44,12 +44,27 @@ class AusPost {
 		$this->piIPAddress = $piIPAddress;
 	}
 
+	function stateFormater($state) {
+		switch(strtolower($state)) {
+			case "western australia": return "WA";
+			case "victoria": return "VIC";
+			case "new south wales": return "NSW";
+			case "queensland": return "QLD";
+			case "tasmania": return "TAS";
+			case "south australia": return "SA";
+			case "australian capital territory": return "ACT";
+			case "northern territory": return "NT";
+			default: return $state;
+		}
+		return $state;
+	}
+
 	function createShipment($orderID, $name, $street, $suburb, $state, $postcode, $phone, $email, $delivery_instructions) {
 		$length = "5";
 		$height = "5";
 		$width = "5";
 		$weight = "0.1";
-
+		var_dump($this->stateFormater($state));
 		$coName = "Alasdair Penman";
 		$coStreet = "22 Winifred Street";
 		$coSuburb = "Mosman Park";
@@ -79,7 +94,7 @@ class AusPost {
 				"'.$street.'"
 			    ],
 			    "suburb":"'.$suburb.'",
-			    "state":"'.$state.'",
+			    "state":"'.$this->stateFormater($state).'",
 			    "postcode":"'.$postcode.'",
 			    "phone":"'.$phone.'",
 			    "email":"'.$email.'",
@@ -101,7 +116,9 @@ class AusPost {
 		    ]
 		}';
 
-		$result = json_decode($this->curl("/shipping/v1/shipments", $body), true);
+		$result = $this->curl("/shipping/v1/shipments", $body);
+		$this->telegramMessage($result);
+		$result = json_decode($result, true);
 		return new Shipment(
 			$result["shipments"][0]["shipment_id"],
 			$result["shipments"][0]["items"][0]["item_id"],
@@ -182,7 +199,10 @@ class AusPost {
 		}
 		curl_setopt($crl, CURLOPT_RETURNTRANSFER, 1);
 		$result = curl_exec($crl);
-		if(!$result) $result = curl_error($crl);
+		if(!$result) {
+			$result = curl_error($crl);
+			$this->telegramMessage($result);
+		}
 		curl_close($crl);
 		return $result;
 

@@ -47,6 +47,18 @@ class Management {
 		}
 	}
 
+	function devProcessOrders() {
+		$xmlOrders = $this->useSample ? $this->sampleResult : $this->getOrder($this->accessToken);
+		$xmlOrders=simplexml_load_string($xmlOrders) or die("Error: Cannot create object");
+
+		if(isset($xmlOrders->TransactionArray->Transaction)) {
+			foreach($xmlOrders->TransactionArray->Transaction as $orders) {
+				$transactionID = $orders->Item->ItemID.$orders->TransactionID;
+				$this->printShippingLabel($orders, $transactionID);
+			}	
+		}
+	}
+
 	function pushPrintJobToQueue($orders) {
 		$product = $this->db->query("SELECT `Folder`, `PrintDuration` FROM Products WHERE ItemID=".$orders->Item->ItemID);
 		$data = mysqli_fetch_assoc($product);
@@ -151,7 +163,8 @@ class Management {
 		$labelURL = $labelInfo->labelUrl;
 		$labelRequestID = $labelInfo->labelRequestID;
 		$result = $sendAusPost->printShippingLabelCUPS($labelURL, $labelRequestID);
-		if($result) echo "Label printed successfully\n";
+		var_dump($result);
+		if(!$result) echo "Label printed successfully\n";
 		else echo "Label printing failed\n";
 	}
 

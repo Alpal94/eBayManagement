@@ -148,7 +148,6 @@ class Management {
 		$email = strpos($email, 'Invalid Request') !== false ? '' : $email;
 
 		$sendAusPost = new AusPost();
-		echo $state;
 		$shipment = $sendAusPost->createShipment(
 			$orderID,
 			$name,
@@ -164,7 +163,8 @@ class Management {
 		$labelURL = $labelInfo->labelUrl;
 		$labelRequestID = $labelInfo->labelRequestID;
 		$result = $sendAusPost->printShippingLabelCUPS($labelURL, $labelRequestID);
-		if($result) echo "Label printed successfully\n";
+		var_dump($result);
+		if(!$result) echo "Label printed successfully\n";
 		else echo "Label printing failed\n";
 	}
 

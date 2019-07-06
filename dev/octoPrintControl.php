@@ -16,6 +16,7 @@ class OctoPrint {
 		$this->telegramChannelID = $telegramChannelID;
 		$this->piIPAddress = $piIPAddress;
 		$this->production = $production;
+		$this->conveyorBeltPassword = $conveyorBeltPassword;
 	}
 
 	function processJobQueue() {
@@ -80,7 +81,7 @@ class OctoPrint {
 	function activateConveyorBelt() {
 		$crl = curl_init();
 		
-		curl_setopt($crl, CURLOPT_URL, "http://$this->piIPAddress:8001");
+		curl_setopt($crl, CURLOPT_URL, "http://$this->piIPAddress:8001?pass=$this->conveyorBeltPassword");
 		curl_setopt($crl, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($crl, CURLOPT_SSL_VERIFYHOST, false); 
 
@@ -124,6 +125,7 @@ class OctoPrint {
 }
 
 $OctoPrint = new OctoPrint();
+//$OctoPrint->processJobQueue();
 $OctoPrint->processJobQueue();
 
 ?>

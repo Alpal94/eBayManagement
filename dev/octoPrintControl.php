@@ -73,12 +73,20 @@ class OctoPrint {
 		else return "TESTING COMPLETE";
 	}
 
+	function preparePrinterYAxis() {
+		$get = "/printer/printhead";
+		$post = '{"command": "jog", "y": 200}';
+		return $this->curl($get, $post);
+	}
+
 	function getFiles() {
 		$get = '/files';
 		return $this->curl($get, false);
 	}
 
 	function activateConveyorBelt() {
+		$this->preparePrinterYAxis();
+		sleep(2);
 		$crl = curl_init();
 		
 		curl_setopt($crl, CURLOPT_URL, "http://$this->piIPAddress:8001?pass=$this->conveyorBeltPassword");
@@ -126,6 +134,6 @@ class OctoPrint {
 
 $OctoPrint = new OctoPrint();
 //$OctoPrint->processJobQueue();
-$OctoPrint->processJobQueue();
+var_dump($OctoPrint->preparePrinterYAxis());
 
 ?>

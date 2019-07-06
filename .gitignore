@@ -3,3 +3,5 @@
 dev/notes
 dev/sample
 dev/tmp
+dev/config.php
+prod/config.php

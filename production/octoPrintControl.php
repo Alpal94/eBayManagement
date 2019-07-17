@@ -133,7 +133,7 @@ class OctoPrint {
 }
 
 $OctoPrint = new OctoPrint();
-//$OctoPrint->processJobQueue();
-var_dump($OctoPrint->preparePrinterYAxis());
+$OctoPrint->processJobQueue();
+$OctoPrint->preparePrinterYAxis();
 
 ?>

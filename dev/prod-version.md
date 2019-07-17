@@ -1,4 +1,4 @@
-Production release: 1.2
+Production release: 1.4
 
 
 Log:

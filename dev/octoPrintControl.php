@@ -132,8 +132,9 @@ class OctoPrint {
 	}
 }
 
-$OctoPrint = new OctoPrint();
-//$OctoPrint->processJobQueue();
-var_dump($OctoPrint->preparePrinterYAxis());
+if(isset($argv[1]) && $argv[1] == 'production') {
+	$OctoPrint = new OctoPrint();
+	$OctoPrint->processJobQueue();
+}
 
 ?>

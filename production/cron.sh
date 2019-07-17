@@ -2,4 +2,4 @@
 
 cd /root/eBayManagement/production
 php orderFetch.php
-php octoPrintControl.php
+php octoPrintControl.php production

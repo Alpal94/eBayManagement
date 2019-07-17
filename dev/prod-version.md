@@ -6,3 +6,4 @@ Log:
 1.1 --> Bug fixes
 1.2 --> Bug fix: critical AusPost state formatting fix and better error messaging
 1.3 --> Password system for conveyorbelt and preparatio of Y axis for new belt system (y axis moves to edge)
+1.4 --> Now communicates with octoprint to check if printer is available for new job

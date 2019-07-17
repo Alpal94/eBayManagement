@@ -52,7 +52,7 @@ class OctoPrint {
 		} else {
 			$timeleft = $activeJobs["PrintDuration"] - (strtotime('now') - $activeJobs["StartTime"]) / 60;
 			$productID = $activeJobs["ProductID"];
-			if ($timeleft < 0) {
+			if ($timeleft < 0 && $this->isPrinterAvailable()) {
 				$status = $this->db->query("DELETE FROM ActiveOrders WHERE ProductID='$productID'");
 				if($status) {
 					$this->telegramMessage("Completed $productID print job");
@@ -76,6 +76,32 @@ class OctoPrint {
 	function preparePrinterYAxis() {
 		$get = "/printer/printhead";
 		$post = '{"command": "jog", "y": 200}';
+		return $this->curl($get, $post);
+	}
+
+	function isPrinterAvailable() {
+		$printer_status = $this->getPrinterStatus();
+		$printer_stats = $this->getPrinterStats();
+		$printer_temperature = json_decode($printer_stats, true)["temperature"]["bed"]["actual"];
+		$isPrinting = json_decode($printer_status, true)["state"] == "Printing";
+
+		if($printer_temperature < 30 && !$isPrinting) {
+			//Printer is not printing and bed has cooled down --> Return true, printer is available
+			return true;
+		}
+		//Printer is printing or bed temperature is still too hot for removal
+		return false;
+	}
+
+	function getPrinterStatus() {
+		$get = "/job";
+		$post = '';
+		return $this->curl($get, $post);
+	}
+
+	function getPrinterStats() {
+		$get = "/printer?history=true&limit=2";
+		$post = '';
 		return $this->curl($get, $post);
 	}
 
@@ -132,8 +158,9 @@ class OctoPrint {
 	}
 }
 
-$OctoPrint = new OctoPrint();
-$OctoPrint->processJobQueue();
-$OctoPrint->preparePrinterYAxis();
+if(isset($argv[1]) && $argv[1] == 'production') {
+	$OctoPrint = new OctoPrint();
+	$OctoPrint->processJobQueue();
+}
 
 ?>

@@ -118,6 +118,18 @@ class AusPost {
 
 		$result = $this->curl("/shipping/v1/shipments", $body);
 		$this->telegramMessage($result);
+		$this->telegramMessage('Delivery address: "to":{
+			    "name":"'.$name.'",
+			    "lines":[
+				"'.$street.'"
+			    ],
+			    "suburb":"'.$suburb.'",
+			    "state":"'.$this->stateFormater($state).'",
+			    "postcode":"'.$postcode.'",
+			    "phone":"'.$phone.'",
+			    "email":"'.$email.'",
+			    "delivery_instructions":"'.$delivery_instructions.'"
+			 }');
 		$result = json_decode($result, true);
 		return new Shipment(
 			$result["shipments"][0]["shipment_id"],

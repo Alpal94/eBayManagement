@@ -34,7 +34,7 @@ class OctoPrint {
 				$productID = $nextJob["ProductID"];
 				$timestamp = strtotime('now');
 
-				if ($this->activateConveyorBelt()) {
+				if ($this->isPrinterAvailable() && $this->activateConveyorBelt()) {
 					$result = $this->db->query("UPDATE ActiveOrders SET StartTime=$timestamp, Active=true WHERE ProductID='$productID'");
 					$this->db->error;
 					if($result) {

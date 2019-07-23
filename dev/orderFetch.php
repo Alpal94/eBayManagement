@@ -133,6 +133,50 @@ class Management {
 		return $rest;
 	}
 
+	function sendMessageToBuyer($order) {
+		$request = "AddMemberMessageAAQToPartnerRequest"; 
+
+		$product = $this->db->query("SELECT `Description` FROM Products WHERE ItemID=".$orders->Item->ItemID);
+		$data = mysqli_fetch_assoc($product);
+		$productDescription = $data["Description"];
+
+		$itemID = $order->Item->ItemID;
+		$name = strval($order->Buyer->BuyerInfo->ShippingAddress->Name);
+		$recipientID = strval($order->Buyer->userID);
+
+		$xml = '<?xml version="1.0" encoding="utf-8"?>
+				<'.$request.' xmlns="urn:ebay:apis:eBLBaseComponents">
+				  <RequesterCredentials>
+				    <eBayAuthToken>'.$this->accessToken.'</eBayAuthToken>
+				  </RequesterCredentials>
+				  <ItemID>'.$itemID.'</ItemID>
+				  <MemberMessage>
+				    <Subject>Thank you '. $name . ' for your purchase</Subject>
+				    <Body>We have processed your order and your product is ready to be shipped.  We appreciate your business and hope you enjoy your '. $productDescription .'.</Body>
+				    <QuestionType>General</QuestionType>
+				    <RecipientID>'.$recipientID.'</RecipientID>
+				  </MemberMessage>
+				</'.$request.'>';
+		$headers = Array(
+			"Content-Type: text/xml",
+			"X-EBAY-API-COMPATIBILITY-LEVEL: 1081",
+			"X-EBAY-API-CALL-NAME: GetSellerTransactions",
+			"X-EBAY-API-SITEID: 0"
+		);
+
+		curl_setopt($crl, CURLOPT_URL, $this->eBayAPIUrl);
+		curl_setopt($crl, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($crl, CURLOPT_POST, 1);
+		curl_setopt($crl, CURLOPT_POSTFIELDS, $xml);
+		curl_setopt($crl, CURLOPT_RETURNTRANSFER, 1);
+
+		$rest = curl_exec($crl);
+
+		curl_close($crl);
+
+		return $rest;
+	}
+
 	function printShippingLabel($orders, $orderID) {
 		$buyer = $orders->Buyer->BuyerInfo->ShippingAddress;
 

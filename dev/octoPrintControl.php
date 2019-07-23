@@ -38,7 +38,7 @@ class OctoPrint {
 					$result = $this->db->query("UPDATE ActiveOrders SET StartTime=$timestamp, Active=true WHERE ProductID='$productID'");
 					$this->db->error;
 					if($result) {
-						$printer_result = $this->sendTo3DPrinter($folder);
+						$printer_result = $this->sendTo3DPrinter("$folder.gcode");
 						$this->telegramMessage("Activated new print job: $printer_result");
 					} else {
 						$error = $this->db->error;
@@ -75,7 +75,13 @@ class OctoPrint {
 
 	function preparePrinterYAxis() {
 		$get = "/printer/printhead";
-		$post = '{"command": "jog", "y": 200}';
+		$post = '{"command": "home", ["y", "x"]}';
+		return $this->curl($get, $post);
+	}
+
+	function listFiles() {
+		$get = "/files";
+		$post = '';
 		return $this->curl($get, $post);
 	}
 

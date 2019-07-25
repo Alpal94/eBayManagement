@@ -135,16 +135,18 @@ class Management {
 		return $rest;
 	}
 
-	function sendMessageToBuyer($order) {
+	function sendMessageToBuyer($transactionID) {
 		$request = "AddMemberMessageAAQToPartnerRequest"; 
 
-		$product = $this->db->query("SELECT `Description` FROM Products WHERE ItemID=".$orders->Item->ItemID);
+		$transactionInformation = mysqli_fetch_assoc($this->db->query("SELECT `ItemID`, `BuyerID`, `BuyerName` FROM Orders WHERE TransactionID=".$transactionID));
+
+		$itemID = $transactionInformation['ItemID'];
+		$name = $transactionInformation['BuyerName'];
+		$recipientID = $transactionInformation['BuyerID'];
+
+		$product = $this->db->query("SELECT `Description` FROM Products WHERE ItemID=". $itemID);
 		$data = mysqli_fetch_assoc($product);
 		$productDescription = $data["Description"];
-
-		$itemID = $order->Item->ItemID;
-		$name = strval($order->Buyer->BuyerInfo->ShippingAddress->Name);
-		$recipientID = strval($order->Buyer->userID);
 
 		$xml = '<?xml version="1.0" encoding="utf-8"?>
 				<'.$request.' xmlns="urn:ebay:apis:eBLBaseComponents">

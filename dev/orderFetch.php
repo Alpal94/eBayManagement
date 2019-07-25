@@ -86,7 +86,9 @@ class Management {
 	}
 
 	function insertRecord($orders) {
-		$sql = "INSERT INTO `Orders` (`ItemID`, `CreatedAt`, `TransactionID`, `QuantityPurchased`) VALUES (".$orders->Item->ItemID.", '$orders->CreatedDate', '".$orders->Item->ItemID."$orders->TransactionID', $orders->QuantityPurchased)\n";
+		$buyerName = strval($orders->Buyer->BuyerInfo->ShippingAddress->Name);
+		$buyerID = strval($orders->Buyer->userID);
+		$sql = "INSERT INTO `Orders` (`ItemID`, `CreatedAt`, `TransactionID`, `QuantityPurchased`, `BuyerID`, `BuyerName`) VALUES (".$orders->Item->ItemID.", '$orders->CreatedDate', '".$orders->Item->ItemID."$orders->TransactionID', $orders->QuantityPurchased, $buyerID, $buyerName)\n";
 		$insert = $this->db->query($sql);
 		if($insert) {
 			echo "INSERT RECORD: SUCCESS\n";

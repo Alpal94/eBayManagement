@@ -29,7 +29,7 @@ class Management {
 	function processOrders() {
 		$xmlOrders = $this->useSample ? $this->sampleResult : $this->getOrder($this->accessToken);
 		$xmlOrders=simplexml_load_string($xmlOrders) or die("Error: Cannot create object");
-
+		
 		if(isset($xmlOrders->TransactionArray->Transaction)) {
 			foreach($xmlOrders->TransactionArray->Transaction as $orders) {
 				$transactionID = $orders->Item->ItemID.$orders->TransactionID;
@@ -136,6 +136,9 @@ class Management {
 	}
 
 	function sendMessageToBuyer($transactionID) {
+		$crl = curl_init();
+
+		$requestHeader = "AddMemberMessageAAQToPartner"; 
 		$request = "AddMemberMessageAAQToPartnerRequest"; 
 
 		$transactionInformation = mysqli_fetch_assoc($this->db->query("SELECT `ItemID`, `BuyerID`, `BuyerName` FROM Orders WHERE TransactionID=".$transactionID));
@@ -147,6 +150,10 @@ class Management {
 		$product = $this->db->query("SELECT `Description` FROM Products WHERE ItemID=". $itemID);
 		$data = mysqli_fetch_assoc($product);
 		$productDescription = $data["Description"];
+		echo $recipientID;
+		echo $itemID;
+		echo $name;
+		var_dump($productDescription);
 
 		$xml = '<?xml version="1.0" encoding="utf-8"?>
 				<'.$request.' xmlns="urn:ebay:apis:eBLBaseComponents">
@@ -164,7 +171,7 @@ class Management {
 		$headers = Array(
 			"Content-Type: text/xml",
 			"X-EBAY-API-COMPATIBILITY-LEVEL: 1081",
-			"X-EBAY-API-CALL-NAME: GetSellerTransactions",
+			"X-EBAY-API-CALL-NAME: $requestHeader",
 			"X-EBAY-API-SITEID: 0"
 		);
 
@@ -222,7 +229,9 @@ class Management {
 	}
 }
 
-$management = new Management();
-$management->processOrders();
+if(isset($argv[1]) && $argv[1] == 'processOrders') {
+	$management = new Management();
+	$management->processOrders();
+}
 
 ?>

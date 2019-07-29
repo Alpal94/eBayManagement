@@ -1,4 +1,5 @@
 <?php
+include 'orderFetch.php';
 
 class OctoPrint {
 	private $db;
@@ -52,9 +53,13 @@ class OctoPrint {
 		} else {
 			$timeleft = $activeJobs["PrintDuration"] - (strtotime('now') - $activeJobs["StartTime"]) / 60;
 			$productID = $activeJobs["ProductID"];
+			$transactionID = $activeJobs["TransactionID"];
 			if ($timeleft < 0 && $this->isPrinterAvailable()) {
 				$status = $this->db->query("DELETE FROM ActiveOrders WHERE ProductID='$productID'");
 				if($status) {
+					$devManagement = new Management();
+					$sendEbayMessageResult = $devManagement->sendMessageToBuyer($transactionID);
+					$this->telegramMessage("Sent message to buyer: $sendEbayMessageResult");
 					$this->telegramMessage("Completed $productID print job");
 				} else {
 					$error = $this->db->error;

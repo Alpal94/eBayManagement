@@ -1,4 +1,5 @@
 <?php
+include 'orderFetch.php';
 
 class OctoPrint {
 	private $db;
@@ -38,7 +39,7 @@ class OctoPrint {
 					$result = $this->db->query("UPDATE ActiveOrders SET StartTime=$timestamp, Active=true WHERE ProductID='$productID'");
 					$this->db->error;
 					if($result) {
-						$printer_result = $this->sendTo3DPrinter($folder);
+						$printer_result = $this->sendTo3DPrinter("$folder.gcode");
 						$this->telegramMessage("Activated new print job: $printer_result");
 					} else {
 						$error = $this->db->error;
@@ -52,9 +53,13 @@ class OctoPrint {
 		} else {
 			$timeleft = $activeJobs["PrintDuration"] - (strtotime('now') - $activeJobs["StartTime"]) / 60;
 			$productID = $activeJobs["ProductID"];
+			$transactionID = $activeJobs["TransactionID"];
 			if ($timeleft < 0 && $this->isPrinterAvailable()) {
 				$status = $this->db->query("DELETE FROM ActiveOrders WHERE ProductID='$productID'");
 				if($status) {
+					$devManagement = new Management();
+					$sendEbayMessageResult = $devManagement->sendMessageToBuyer($transactionID);
+					$this->telegramMessage("Sent message to buyer: $sendEbayMessageResult");
 					$this->telegramMessage("Completed $productID print job");
 				} else {
 					$error = $this->db->error;
@@ -75,7 +80,13 @@ class OctoPrint {
 
 	function preparePrinterYAxis() {
 		$get = "/printer/printhead";
-		$post = '{"command": "jog", "y": 200}';
+		$post = '{"command": "home", ["y", "x"]}';
+		return $this->curl($get, $post);
+	}
+
+	function listFiles() {
+		$get = "/files";
+		$post = '';
 		return $this->curl($get, $post);
 	}
 

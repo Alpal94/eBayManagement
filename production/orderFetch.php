@@ -19,6 +19,7 @@ class Management {
 		$this->telegramAPIKey = $telegramAPIKey;
 		$this->telegramChannelID = $telegramChannelID;
 		$this->eBayAPIUrl = $eBayAPIUrl;
+		$this->production = $production;
 
 		if($this->useSample) {
 			include 'sampleXML.php';
@@ -27,9 +28,9 @@ class Management {
 	}
 
 	function processOrders() {
-		$xmlOrders = $this->useSample ? $this->sampleResult : $this->getOrder($this->accessToken);
+		$xmlOrders = $this->useSample && !$this->production ? $this->sampleResult : $this->getOrder($this->accessToken);
 		$xmlOrders=simplexml_load_string($xmlOrders) or die("Error: Cannot create object");
-
+		
 		if(isset($xmlOrders->TransactionArray->Transaction)) {
 			foreach($xmlOrders->TransactionArray->Transaction as $orders) {
 				$transactionID = $orders->Item->ItemID.$orders->TransactionID;
@@ -86,7 +87,12 @@ class Management {
 	}
 
 	function insertRecord($orders) {
-		$sql = "INSERT INTO `Orders` (`ItemID`, `CreatedAt`, `TransactionID`, `QuantityPurchased`) VALUES (".$orders->Item->ItemID.", '$orders->CreatedDate', '".$orders->Item->ItemID."$orders->TransactionID', $orders->QuantityPurchased)\n";
+		$buyerName = strval($orders->Buyer->BuyerInfo->ShippingAddress->Name);
+		$buyerID = strval($orders->Buyer->UserID);
+		var_dump($buyerName);
+		var_dump($buyerID);
+		$sql = "INSERT INTO `Orders` (`ItemID`, `CreatedAt`, `TransactionID`, `QuantityPurchased`, `BuyerID`, `BuyerName`) VALUES (".$orders->Item->ItemID.", '$orders->CreatedDate', '".$orders->Item->ItemID."$orders->TransactionID', $orders->QuantityPurchased, '$buyerID',  '$buyerName')\n";
+		echo $sql;
 		$insert = $this->db->query($sql);
 		if($insert) {
 			echo "INSERT RECORD: SUCCESS\n";
@@ -117,6 +123,59 @@ class Management {
 			"Content-Type: text/xml",
 			"X-EBAY-API-COMPATIBILITY-LEVEL: 1081",
 			"X-EBAY-API-CALL-NAME: GetSellerTransactions",
+			"X-EBAY-API-SITEID: 0"
+		);
+
+		curl_setopt($crl, CURLOPT_URL, $this->eBayAPIUrl);
+		curl_setopt($crl, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($crl, CURLOPT_POST, 1);
+		curl_setopt($crl, CURLOPT_POSTFIELDS, $xml);
+		curl_setopt($crl, CURLOPT_RETURNTRANSFER, 1);
+
+		$rest = curl_exec($crl);
+
+		curl_close($crl);
+
+		return $rest;
+	}
+
+	function sendMessageToBuyer($transactionID) {
+		$crl = curl_init();
+
+		$requestHeader = "AddMemberMessageAAQToPartner"; 
+		$request = "AddMemberMessageAAQToPartnerRequest"; 
+
+		$transactionInformation = mysqli_fetch_assoc($this->db->query("SELECT `ItemID`, `BuyerID`, `BuyerName` FROM Orders WHERE TransactionID=".$transactionID));
+
+		$itemID = $transactionInformation['ItemID'];
+		$name = $transactionInformation['BuyerName'];
+		$recipientID = $transactionInformation['BuyerID'];
+
+		$product = $this->db->query("SELECT `Description` FROM Products WHERE ItemID=". $itemID);
+		$data = mysqli_fetch_assoc($product);
+		$productDescription = $data["Description"];
+		echo $recipientID;
+		echo $itemID;
+		echo $name;
+		var_dump($productDescription);
+
+		$xml = '<?xml version="1.0" encoding="utf-8"?>
+				<'.$request.' xmlns="urn:ebay:apis:eBLBaseComponents">
+				  <RequesterCredentials>
+				    <eBayAuthToken>'.$this->accessToken.'</eBayAuthToken>
+				  </RequesterCredentials>
+				  <ItemID>'.$itemID.'</ItemID>
+				  <MemberMessage>
+				    <Subject>Thank you '. $name . ' for your purchase</Subject>
+				    <Body>We have processed your order and your product is ready to be shipped.  We appreciate your business and hope you enjoy your '. $productDescription .'.</Body>
+				    <QuestionType>General</QuestionType>
+				    <RecipientID>'.$recipientID.'</RecipientID>
+				  </MemberMessage>
+				</'.$request.'>';
+		$headers = Array(
+			"Content-Type: text/xml",
+			"X-EBAY-API-COMPATIBILITY-LEVEL: 1081",
+			"X-EBAY-API-CALL-NAME: $requestHeader",
 			"X-EBAY-API-SITEID: 0"
 		);
 
@@ -174,7 +233,9 @@ class Management {
 	}
 }
 
-$management = new Management();
-$management->processOrders();
+if(isset($argv[1]) && $argv[1] == 'processOrders') {
+	$management = new Management();
+	$management->processOrders();
+}
 
 ?>

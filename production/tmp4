@@ -1,0 +1,584 @@
+object(SimpleXMLElement)#5 (32) {
+  ["AmountPaid"]=>
+  string(4) "6.98"
+  ["AdjustmentAmount"]=>
+  string(3) "0.0"
+  ["ConvertedAdjustmentAmount"]=>
+  string(3) "0.0"
+  ["Buyer"]=>
+  object(SimpleXMLElement)#7 (22) {
+    ["AboutMePage"]=>
+    string(5) "false"
+    ["EIASToken"]=>
+    string(56) "nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6AHkYCmC5WKoQ6dj6x9nY+seQ=="
+    ["Email"]=>
+    string(23) "ramonajkeller@gmail.com"
+    ["FeedbackScore"]=>
+    string(3) "246"
+    ["PositiveFeedbackPercent"]=>
+    string(5) "100.0"
+    ["FeedbackPrivate"]=>
+    string(5) "false"
+    ["FeedbackRatingStar"]=>
+    string(9) "Turquoise"
+    ["IDVerified"]=>
+    string(5) "false"
+    ["eBayGoodStanding"]=>
+    string(4) "true"
+    ["NewUser"]=>
+    string(5) "false"
+    ["RegistrationDate"]=>
+    string(24) "2014-12-06T11:43:12.000Z"
+    ["Site"]=>
+    string(9) "Australia"
+    ["Status"]=>
+    string(9) "Confirmed"
+    ["UserID"]=>
+    string(9) "samhain67"
+    ["UserIDChanged"]=>
+    string(5) "false"
+    ["UserIDLastChanged"]=>
+    string(24) "2014-12-13T11:59:58.000Z"
+    ["VATStatus"]=>
+    string(6) "VATTax"
+    ["BuyerInfo"]=>
+    object(SimpleXMLElement)#14 (1) {
+      ["ShippingAddress"]=>
+      object(SimpleXMLElement)#15 (11) {
+        ["Name"]=>
+        string(13) "Ramona Keller"
+        ["Street1"]=>
+        string(13) "6 BIRD COURT "
+        ["CityName"]=>
+        string(16) "HOPPERS CROSSING"
+        ["StateOrProvince"]=>
+        string(8) "Victoria"
+        ["Country"]=>
+        string(2) "AU"
+        ["CountryName"]=>
+        string(9) "Australia"
+        ["Phone"]=>
+        string(10) "0404366173"
+        ["PostalCode"]=>
+        string(4) "3029"
+        ["AddressID"]=>
+        string(13) "7027200326011"
+        ["AddressOwner"]=>
+        string(4) "eBay"
+        ["AddressUsage"]=>
+        string(15) "DefaultShipping"
+      }
+    }
+    ["UserAnonymized"]=>
+    string(5) "false"
+    ["StaticAlias"]=>
+    string(39) "samhai_lwnb3399pdzc@members.ebay.com.au"
+    ["UserFirstName"]=>
+    string(6) "Ramona"
+    ["UserLastName"]=>
+    string(6) "Keller"
+  }
+  ["ShippingDetails"]=>
+  object(SimpleXMLElement)#8 (7) {
+    ["ChangePaymentInstructions"]=>
+    string(4) "true"
+    ["PaymentEdited"]=>
+    string(4) "true"
+    ["SalesTax"]=>
+    object(SimpleXMLElement)#14 (3) {
+      ["SalesTaxPercent"]=>
+      string(3) "0.0"
+      ["ShippingIncludedInTax"]=>
+      string(5) "false"
+      ["SalesTaxAmount"]=>
+      string(3) "0.0"
+    }
+    ["ShippingType"]=>
+    string(4) "Flat"
+    ["SellingManagerSalesRecordNumber"]=>
+    string(3) "103"
+    ["ThirdPartyCheckout"]=>
+    string(5) "false"
+    ["TaxTable"]=>
+    object(SimpleXMLElement)#15 (0) {
+    }
+  }
+  ["ConvertedAmountPaid"]=>
+  string(4) "4.86"
+  ["ConvertedTransactionPrice"]=>
+  string(4) "2.08"
+  ["CreatedDate"]=>
+  string(24) "2019-07-26T07:19:35.000Z"
+  ["DepositType"]=>
+  string(4) "None"
+  ["Item"]=>
+  object(SimpleXMLElement)#9 (20) {
+    ["AutoPay"]=>
+    string(4) "true"
+    ["BuyerProtection"]=>
+    string(14) "ItemIneligible"
+    ["BuyItNowPrice"]=>
+    string(3) "0.0"
+    ["Currency"]=>
+    string(3) "AUD"
+    ["ItemID"]=>
+    string(12) "323867602429"
+    ["ListingDetails"]=>
+    object(SimpleXMLElement)#15 (2) {
+      ["StartTime"]=>
+      string(24) "2019-07-24T23:40:17.000Z"
+      ["EndTime"]=>
+      string(24) "2019-08-24T23:40:17.000Z"
+    }
+    ["ListingType"]=>
+    string(16) "StoresFixedPrice"
+    ["PaymentMethods"]=>
+    string(6) "PayPal"
+    ["PrimaryCategory"]=>
+    object(SimpleXMLElement)#14 (1) {
+      ["CategoryID"]=>
+      string(3) "553"
+    }
+    ["PrivateListing"]=>
+    string(5) "false"
+    ["Quantity"]=>
+    string(2) "10"
+    ["SecondaryCategory"]=>
+    object(SimpleXMLElement)#16 (1) {
+      ["CategoryID"]=>
+      string(1) "0"
+    }
+    ["SellingStatus"]=>
+    object(SimpleXMLElement)#17 (3) {
+      ["CurrentPrice"]=>
+      string(4) "2.99"
+      ["QuantitySold"]=>
+      string(1) "1"
+      ["ListingStatus"]=>
+      string(6) "Active"
+    }
+    ["Site"]=>
+    string(9) "Australia"
+    ["StartPrice"]=>
+    string(4) "2.99"
+    ["Title"]=>
+    string(10) "Model hand"
+    ["GetItFast"]=>
+    string(5) "false"
+    ["IntegratedMerchantCreditCardEnabled"]=>
+    string(5) "false"
+    ["ConditionID"]=>
+    string(4) "1000"
+    ["ConditionDisplayName"]=>
+    string(3) "New"
+  }
+  ["QuantityPurchased"]=>
+  string(1) "1"
+  ["Status"]=>
+  object(SimpleXMLElement)#10 (11) {
+    ["eBayPaymentStatus"]=>
+    string(16) "NoPaymentFailure"
+    ["CheckoutStatus"]=>
+    string(16) "CheckoutComplete"
+    ["LastTimeModified"]=>
+    string(24) "2019-07-26T07:23:25.000Z"
+    ["PaymentMethodUsed"]=>
+    string(6) "PayPal"
+    ["CompleteStatus"]=>
+    string(8) "Complete"
+    ["BuyerSelectedShipping"]=>
+    string(4) "true"
+    ["PaymentHoldStatus"]=>
+    string(4) "None"
+    ["IntegratedMerchantCreditCardEnabled"]=>
+    string(5) "false"
+    ["InquiryStatus"]=>
+    string(13) "NotApplicable"
+    ["ReturnStatus"]=>
+    string(13) "NotApplicable"
+    ["PaymentInstrument"]=>
+    string(6) "PayPal"
+  }
+  ["TransactionID"]=>
+  string(13) "2082461299011"
+  ["TransactionPrice"]=>
+  string(4) "2.99"
+  ["BestOfferSale"]=>
+  string(5) "false"
+  ["eBayCollectAndRemitTax"]=>
+  string(5) "false"
+  ["ExternalTransaction"]=>
+  object(SimpleXMLElement)#11 (5) {
+    ["ExternalTransactionID"]=>
+    string(17) "7PD06902YU976883E"
+    ["ExternalTransactionTime"]=>
+    string(24) "2019-07-26T07:19:33.000Z"
+    ["FeeOrCreditAmount"]=>
+    string(4) "0.48"
+    ["PaymentOrRefundAmount"]=>
+    string(4) "6.98"
+    ["ExternalTransactionStatus"]=>
+    string(9) "Succeeded"
+  }
+  ["ShippingServiceSelected"]=>
+  object(SimpleXMLElement)#12 (3) {
+    ["ShippingService"]=>
+    string(19) "AU_StandardDelivery"
+    ["ShippingServiceCost"]=>
+    string(3) "0.0"
+    ["ShippingPackageInfo"]=>
+    object(SimpleXMLElement)#17 (5) {
+      ["EstimatedDeliveryTimeMin"]=>
+      string(24) "2019-08-04T14:00:00.000Z"
+      ["EstimatedDeliveryTimeMax"]=>
+      string(24) "2019-08-05T14:00:00.000Z"
+      ["HandleByTime"]=>
+      string(24) "2019-07-30T13:59:59.000Z"
+      ["MinNativeEstimatedDeliveryTime"]=>
+      string(24) "2019-07-30T14:00:00.000Z"
+      ["MaxNativeEstimatedDeliveryTime"]=>
+      string(24) "2019-08-06T14:00:00.000Z"
+    }
+  }
+  ["PaidTime"]=>
+  string(24) "2019-07-26T07:19:36.000Z"
+  ["TransactionSiteID"]=>
+  string(9) "Australia"
+  ["Platform"]=>
+  string(4) "eBay"
+  ["PayPalEmailAddress"]=>
+  string(27) "alasdair.penman@hotmail.com"
+  ["ActualShippingCost"]=>
+  string(3) "0.0"
+  ["ActualHandlingCost"]=>
+  string(3) "0.0"
+  ["OrderLineItemID"]=>
+  string(26) "323867602429-2082461299011"
+  ["IsMultiLegShipping"]=>
+  string(5) "false"
+  ["IntangibleItem"]=>
+  string(5) "false"
+  ["MonetaryDetails"]=>
+  object(SimpleXMLElement)#13 (1) {
+    ["Payments"]=>
+    object(SimpleXMLElement)#17 (1) {
+      ["Payment"]=>
+      object(SimpleXMLElement)#16 (7) {
+        ["PaymentStatus"]=>
+        string(9) "Succeeded"
+        ["Payer"]=>
+        string(9) "samhain67"
+        ["Payee"]=>
+        string(14) "alasdairpenman"
+        ["PaymentTime"]=>
+        string(24) "2019-07-26T07:19:33.000Z"
+        ["PaymentAmount"]=>
+        string(4) "6.98"
+        ["ReferenceID"]=>
+        string(17) "7PD06902YU976883E"
+        ["FeeOrCreditAmount"]=>
+        string(4) "0.48"
+      }
+    }
+  }
+  ["ExtendedOrderID"]=>
+  string(14) "05-03656-77531"
+  ["eBayPlusTransaction"]=>
+  string(5) "false"
+  ["GuaranteedShipping"]=>
+  string(5) "false"
+  ["GuaranteedDelivery"]=>
+  string(5) "false"
+}
+object(SimpleXMLElement)#10 (31) {
+  ["AmountPaid"]=>
+  string(4) "6.98"
+  ["AdjustmentAmount"]=>
+  string(3) "0.0"
+  ["ConvertedAdjustmentAmount"]=>
+  string(3) "0.0"
+  ["Buyer"]=>
+  object(SimpleXMLElement)#5 (22) {
+    ["AboutMePage"]=>
+    string(5) "false"
+    ["EIASToken"]=>
+    string(56) "nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6AHkYCmC5WKoQ6dj6x9nY+seQ=="
+    ["Email"]=>
+    string(23) "ramonajkeller@gmail.com"
+    ["FeedbackScore"]=>
+    string(3) "246"
+    ["PositiveFeedbackPercent"]=>
+    string(5) "100.0"
+    ["FeedbackPrivate"]=>
+    string(5) "false"
+    ["FeedbackRatingStar"]=>
+    string(9) "Turquoise"
+    ["IDVerified"]=>
+    string(5) "false"
+    ["eBayGoodStanding"]=>
+    string(4) "true"
+    ["NewUser"]=>
+    string(5) "false"
+    ["RegistrationDate"]=>
+    string(24) "2014-12-06T11:43:12.000Z"
+    ["Site"]=>
+    string(9) "Australia"
+    ["Status"]=>
+    string(9) "Confirmed"
+    ["UserID"]=>
+    string(9) "samhain67"
+    ["UserIDChanged"]=>
+    string(5) "false"
+    ["UserIDLastChanged"]=>
+    string(24) "2014-12-13T11:59:58.000Z"
+    ["VATStatus"]=>
+    string(6) "VATTax"
+    ["BuyerInfo"]=>
+    object(SimpleXMLElement)#16 (1) {
+      ["ShippingAddress"]=>
+      object(SimpleXMLElement)#14 (11) {
+        ["Name"]=>
+        string(13) "Ramona Keller"
+        ["Street1"]=>
+        string(13) "6 BIRD COURT "
+        ["CityName"]=>
+        string(16) "HOPPERS CROSSING"
+        ["StateOrProvince"]=>
+        string(8) "Victoria"
+        ["Country"]=>
+        string(2) "AU"
+        ["CountryName"]=>
+        string(9) "Australia"
+        ["Phone"]=>
+        string(10) "0404366173"
+        ["PostalCode"]=>
+        string(4) "3029"
+        ["AddressID"]=>
+        string(13) "7027200326011"
+        ["AddressOwner"]=>
+        string(4) "eBay"
+        ["AddressUsage"]=>
+        string(15) "DefaultShipping"
+      }
+    }
+    ["UserAnonymized"]=>
+    string(5) "false"
+    ["StaticAlias"]=>
+    string(39) "samhai_lwnb3399pdzc@members.ebay.com.au"
+    ["UserFirstName"]=>
+    string(6) "Ramona"
+    ["UserLastName"]=>
+    string(6) "Keller"
+  }
+  ["ShippingDetails"]=>
+  object(SimpleXMLElement)#11 (8) {
+    ["ChangePaymentInstructions"]=>
+    string(4) "true"
+    ["PaymentEdited"]=>
+    string(4) "true"
+    ["SalesTax"]=>
+    object(SimpleXMLElement)#16 (3) {
+      ["SalesTaxPercent"]=>
+      string(3) "0.0"
+      ["ShippingIncludedInTax"]=>
+      string(5) "false"
+      ["SalesTaxAmount"]=>
+      string(3) "0.0"
+    }
+    ["ShippingType"]=>
+    string(4) "Flat"
+    ["SellingManagerSalesRecordNumber"]=>
+    string(3) "102"
+    ["ThirdPartyCheckout"]=>
+    string(5) "false"
+    ["TaxTable"]=>
+    object(SimpleXMLElement)#14 (0) {
+    }
+    ["GetItFast"]=>
+    string(5) "false"
+  }
+  ["ConvertedAmountPaid"]=>
+  string(4) "4.86"
+  ["ConvertedTransactionPrice"]=>
+  string(4) "2.78"
+  ["CreatedDate"]=>
+  string(24) "2019-07-26T07:19:35.000Z"
+  ["DepositType"]=>
+  string(4) "None"
+  ["Item"]=>
+  object(SimpleXMLElement)#12 (20) {
+    ["AutoPay"]=>
+    string(4) "true"
+    ["BuyerProtection"]=>
+    string(14) "ItemIneligible"
+    ["BuyItNowPrice"]=>
+    string(3) "0.0"
+    ["Currency"]=>
+    string(3) "AUD"
+    ["ItemID"]=>
+    string(12) "323863249104"
+    ["ListingDetails"]=>
+    object(SimpleXMLElement)#14 (2) {
+      ["StartTime"]=>
+      string(24) "2019-07-20T06:55:12.000Z"
+      ["EndTime"]=>
+      string(24) "2019-08-20T06:55:12.000Z"
+    }
+    ["ListingType"]=>
+    string(16) "StoresFixedPrice"
+    ["PaymentMethods"]=>
+    string(6) "PayPal"
+    ["PrimaryCategory"]=>
+    object(SimpleXMLElement)#16 (1) {
+      ["CategoryID"]=>
+      string(3) "553"
+    }
+    ["PrivateListing"]=>
+    string(5) "false"
+    ["Quantity"]=>
+    string(2) "10"
+    ["SecondaryCategory"]=>
+    object(SimpleXMLElement)#15 (1) {
+      ["CategoryID"]=>
+      string(1) "0"
+    }
+    ["SellingStatus"]=>
+    object(SimpleXMLElement)#18 (3) {
+      ["CurrentPrice"]=>
+      string(4) "3.99"
+      ["QuantitySold"]=>
+      string(1) "2"
+      ["ListingStatus"]=>
+      string(6) "Active"
+    }
+    ["Site"]=>
+    string(9) "Australia"
+    ["StartPrice"]=>
+    string(4) "3.99"
+    ["Title"]=>
+    string(12) "Rude octopus"
+    ["GetItFast"]=>
+    string(5) "false"
+    ["IntegratedMerchantCreditCardEnabled"]=>
+    string(5) "false"
+    ["ConditionID"]=>
+    string(4) "1000"
+    ["ConditionDisplayName"]=>
+    string(3) "New"
+  }
+  ["QuantityPurchased"]=>
+  string(1) "1"
+  ["Status"]=>
+  object(SimpleXMLElement)#9 (11) {
+    ["eBayPaymentStatus"]=>
+    string(16) "NoPaymentFailure"
+    ["CheckoutStatus"]=>
+    string(16) "CheckoutComplete"
+    ["LastTimeModified"]=>
+    string(24) "2019-07-26T07:23:28.000Z"
+    ["PaymentMethodUsed"]=>
+    string(6) "PayPal"
+    ["CompleteStatus"]=>
+    string(8) "Complete"
+    ["BuyerSelectedShipping"]=>
+    string(4) "true"
+    ["PaymentHoldStatus"]=>
+    string(4) "None"
+    ["IntegratedMerchantCreditCardEnabled"]=>
+    string(5) "false"
+    ["InquiryStatus"]=>
+    string(13) "NotApplicable"
+    ["ReturnStatus"]=>
+    string(13) "NotApplicable"
+    ["PaymentInstrument"]=>
+    string(6) "PayPal"
+  }
+  ["TransactionID"]=>
+  string(13) "2082461300011"
+  ["TransactionPrice"]=>
+  string(4) "3.99"
+  ["BestOfferSale"]=>
+  string(5) "false"
+  ["eBayCollectAndRemitTax"]=>
+  string(5) "false"
+  ["ExternalTransaction"]=>
+  object(SimpleXMLElement)#8 (5) {
+    ["ExternalTransactionID"]=>
+    string(17) "7PD06902YU976883E"
+    ["ExternalTransactionTime"]=>
+    string(24) "2019-07-26T07:19:33.000Z"
+    ["FeeOrCreditAmount"]=>
+    string(4) "0.48"
+    ["PaymentOrRefundAmount"]=>
+    string(4) "6.98"
+    ["ExternalTransactionStatus"]=>
+    string(9) "Succeeded"
+  }
+  ["ShippingServiceSelected"]=>
+  object(SimpleXMLElement)#7 (3) {
+    ["ShippingService"]=>
+    string(19) "AU_StandardDelivery"
+    ["ShippingServiceCost"]=>
+    string(3) "0.0"
+    ["ShippingPackageInfo"]=>
+    object(SimpleXMLElement)#18 (5) {
+      ["EstimatedDeliveryTimeMin"]=>
+      string(24) "2019-08-04T14:00:00.000Z"
+      ["EstimatedDeliveryTimeMax"]=>
+      string(24) "2019-08-05T14:00:00.000Z"
+      ["HandleByTime"]=>
+      string(24) "2019-07-30T13:59:59.000Z"
+      ["MinNativeEstimatedDeliveryTime"]=>
+      string(24) "2019-07-30T14:00:00.000Z"
+      ["MaxNativeEstimatedDeliveryTime"]=>
+      string(24) "2019-08-06T14:00:00.000Z"
+    }
+  }
+  ["PaidTime"]=>
+  string(24) "2019-07-26T07:19:36.000Z"
+  ["TransactionSiteID"]=>
+  string(9) "Australia"
+  ["Platform"]=>
+  string(4) "eBay"
+  ["PayPalEmailAddress"]=>
+  string(27) "alasdair.penman@hotmail.com"
+  ["ActualShippingCost"]=>
+  string(3) "0.0"
+  ["OrderLineItemID"]=>
+  string(26) "323863249104-2082461300011"
+  ["IsMultiLegShipping"]=>
+  string(5) "false"
+  ["IntangibleItem"]=>
+  string(5) "false"
+  ["MonetaryDetails"]=>
+  object(SimpleXMLElement)#17 (1) {
+    ["Payments"]=>
+    object(SimpleXMLElement)#18 (1) {
+      ["Payment"]=>
+      object(SimpleXMLElement)#15 (7) {
+        ["PaymentStatus"]=>
+        string(9) "Succeeded"
+        ["Payer"]=>
+        string(9) "samhain67"
+        ["Payee"]=>
+        string(14) "alasdairpenman"
+        ["PaymentTime"]=>
+        string(24) "2019-07-26T07:19:33.000Z"
+        ["PaymentAmount"]=>
+        string(4) "6.98"
+        ["ReferenceID"]=>
+        string(17) "7PD06902YU976883E"
+        ["FeeOrCreditAmount"]=>
+        string(4) "0.48"
+      }
+    }
+  }
+  ["ExtendedOrderID"]=>
+  string(14) "05-03656-77531"
+  ["eBayPlusTransaction"]=>
+  string(5) "false"
+  ["GuaranteedShipping"]=>
+  string(5) "false"
+  ["GuaranteedDelivery"]=>
+  string(5) "false"
+}

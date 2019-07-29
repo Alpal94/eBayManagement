@@ -106,7 +106,7 @@ $sampleResult = '<GetSellerTransactionsResponse xmlns="urn:ebay:apis:eBLBaseComp
       <Item>
         <AutoPay>false</AutoPay>
         <Currency>USD</Currency>
-        <ItemID>110043277865</ItemID>
+        <ItemID>323863242763</ItemID>
         <ListingType>Chinese</ListingType>
         <PaymentMethods>PayPal</PaymentMethods>
         <PrivateListing>false</PrivateListing>
@@ -196,7 +196,7 @@ $sampleResult = '<GetSellerTransactionsResponse xmlns="urn:ebay:apis:eBLBaseComp
       <Item>
         <AutoPay>false</AutoPay>
         <Currency>USD</Currency>
-        <ItemID>110043671232</ItemID>
+        <ItemID>323863242763</ItemID>
         <ListingType>Chinese</ListingType>
         <PaymentMethods>PayPal</PaymentMethods>
         <PrivateListing>false</PrivateListing>
@@ -286,7 +286,7 @@ $sampleResult = '<GetSellerTransactionsResponse xmlns="urn:ebay:apis:eBLBaseComp
       <Item>
         <AutoPay>false</AutoPay>
         <Currency>USD</Currency>
-        <ItemID>110043671232</ItemID>
+        <ItemID>323863242763</ItemID>
         <ListingType>Chinese</ListingType>
         <PaymentMethods>PayPal</PaymentMethods>
         <PrivateListing>false</PrivateListing>
@@ -376,7 +376,7 @@ $sampleResult = '<GetSellerTransactionsResponse xmlns="urn:ebay:apis:eBLBaseComp
       <Item>
         <AutoPay>false</AutoPay>
         <Currency>USD</Currency>
-        <ItemID>110043671232</ItemID>
+        <ItemID>323863242763</ItemID>
         <ListingType>Chinese</ListingType>
         <PaymentMethods>PayPal</PaymentMethods>
         <PrivateListing>false</PrivateListing>

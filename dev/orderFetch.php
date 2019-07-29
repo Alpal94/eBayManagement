@@ -19,6 +19,7 @@ class Management {
 		$this->telegramAPIKey = $telegramAPIKey;
 		$this->telegramChannelID = $telegramChannelID;
 		$this->eBayAPIUrl = $eBayAPIUrl;
+		$this->production = $production;
 
 		if($this->useSample) {
 			include 'sampleXML.php';
@@ -27,7 +28,7 @@ class Management {
 	}
 
 	function processOrders() {
-		$xmlOrders = $this->useSample ? $this->sampleResult : $this->getOrder($this->accessToken);
+		$xmlOrders = $this->useSample && !$this->production ? $this->sampleResult : $this->getOrder($this->accessToken);
 		$xmlOrders=simplexml_load_string($xmlOrders) or die("Error: Cannot create object");
 		
 		if(isset($xmlOrders->TransactionArray->Transaction)) {
@@ -87,8 +88,11 @@ class Management {
 
 	function insertRecord($orders) {
 		$buyerName = strval($orders->Buyer->BuyerInfo->ShippingAddress->Name);
-		$buyerID = strval($orders->Buyer->userID);
-		$sql = "INSERT INTO `Orders` (`ItemID`, `CreatedAt`, `TransactionID`, `QuantityPurchased`, `BuyerID`, `BuyerName`) VALUES (".$orders->Item->ItemID.", '$orders->CreatedDate', '".$orders->Item->ItemID."$orders->TransactionID', $orders->QuantityPurchased, $buyerID, $buyerName)\n";
+		$buyerID = strval($orders->Buyer->UserID);
+		var_dump($buyerName);
+		var_dump($buyerID);
+		$sql = "INSERT INTO `Orders` (`ItemID`, `CreatedAt`, `TransactionID`, `QuantityPurchased`, `BuyerID`, `BuyerName`) VALUES (".$orders->Item->ItemID.", '$orders->CreatedDate', '".$orders->Item->ItemID."$orders->TransactionID', $orders->QuantityPurchased, '$buyerID',  '$buyerName')\n";
+		echo $sql;
 		$insert = $this->db->query($sql);
 		if($insert) {
 			echo "INSERT RECORD: SUCCESS\n";

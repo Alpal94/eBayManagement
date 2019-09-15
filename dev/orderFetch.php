@@ -28,7 +28,7 @@ class Management {
 	}
 
 	function processOrders() {
-		$xmlOrders = $this->useSample && !$this->production ? $this->sampleResult : $this->getOrder($this->accessToken);
+		$xmlOrders = $this->useSample && !$this->production ? $this->sampleResult : $this->getOrder(3);
 		$xmlOrders=simplexml_load_string($xmlOrders) or die("Error: Cannot create object");
 		
 		if(isset($xmlOrders->TransactionArray->Transaction)) {
@@ -40,6 +40,7 @@ class Management {
 					$this->telegramMessage("New order received: " . $transactionID . " Quantity: $orders->QuantityPurchased");
 					$this->insertRecord($orders);
 					$this->pushPrintJobToQueue($orders);
+
 					$this->printShippingLabel($orders, $transactionID);
 				} else {
 				}
@@ -48,8 +49,27 @@ class Management {
 		}
 	}
 
+	function reprintLabelsDaysAgo($command) {
+		echo $command;
+		$xmlOrders = $this->useSample && !$this->production ? $this->sampleResult : $this->getOrder(3);
+		$xmlOrders=simplexml_load_string($xmlOrders) or die("Error: Cannot create object");
+		
+		if(isset($xmlOrders->TransactionArray->Transaction)) {
+			foreach($xmlOrders->TransactionArray->Transaction as $orders) {
+				$transactionID = $orders->Item->ItemID.$orders->TransactionID;
+				if(isset($command) && $command == 'echo') {
+					$this->echoPrintShippingLabelMetadata($orders, $transactionID);
+				}
+				if(isset($command) && $command == 'print') {
+					$this->printShippingLabel($orders, $transactionID);
+				}
+			}	
+		} else {
+		}
+	}
+
 	function devProcessOrders() {
-		$xmlOrders = $this->useSample ? $this->sampleResult : $this->getOrder($this->accessToken);
+		$xmlOrders = $this->useSample ? $this->sampleResult : $this->getOrder(3);
 		$xmlOrders=simplexml_load_string($xmlOrders) or die("Error: Cannot create object");
 
 		if(isset($xmlOrders->TransactionArray->Transaction)) {
@@ -104,14 +124,14 @@ class Management {
 
 	}
 
-	function getOrder() {
+	function getOrder($daysAgo) {
 		$crl = curl_init();
 
 		$request = "GetSellerTransactionsRequest"; 
 
 		date_default_timezone_set("UTC");
 		$date = new DateTime();
-		$dateFrom = str_replace("_", "T", date("Y-m-d_H:i:s", $date->getTimestamp() - 60*60*24))."Z";
+		$dateFrom = str_replace("_", "T", date("Y-m-d_H:i:s", $date->getTimestamp() - $daysAgo*60*60*24))."Z";
 		$dateTo = str_replace("_", "T", date("Y-m-d_H:i:s"))."Z";
 		$xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><$request xmlns=\"urn:ebay:apis:eBLBaseComponents\"><DetailLevel>ReturnAll</DetailLevel><ModTimeFrom>$dateFrom</ModTimeFrom><ModTimeTo>$dateTo</ModTimeTo><RequesterCredentials><eBayAuthToken>$this->accessToken</eBayAuthToken></RequesterCredentials><RequesterCredentials><eBayAuthToken>$this->accessToken</eBayAuthToken></RequesterCredentials></$request>";
 		$xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><$request xmlns=\"urn:ebay:apis:eBLBaseComponents\"><DetailLevel>ReturnAll</DetailLevel><ModTimeFrom>$dateFrom</ModTimeFrom><ModTimeTo>$dateTo</ModTimeTo><RequesterCredentials><eBayAuthToken>$this->accessToken</eBayAuthToken></RequesterCredentials><RequesterCredentials><eBayAuthToken>$this->accessToken</eBayAuthToken></RequesterCredentials></$request>";
@@ -190,6 +210,21 @@ class Management {
 		curl_close($crl);
 
 		return $rest;
+	}
+
+	function echoPrintShippingLabelMetadata($orders, $orderID) {
+		$buyer = $orders->Buyer->BuyerInfo->ShippingAddress;
+
+		$name = strval($buyer->Name);
+		$email = strval($orders->Buyer->Email);
+		$phone = strval($buyer->Phone);
+		$street = strval($buyer->Street1);
+		$suburb = strval($buyer->CityName);
+		$postcode = strval($buyer->PostalCode);
+		$state = strval($buyer->StateOrProvince);
+		$delivery_instructions = "";
+
+		echo "Results: $name $email $phone $street $suburb $postcode $state\n";
 	}
 
 	function printShippingLabel($orders, $orderID) {

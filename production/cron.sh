@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /root/eBayManagement/production
+cd /home/pi/eBayManagement/production
 php orderFetch.php processOrders
 php octoPrintControl.php production
